@@ -25,20 +25,20 @@ Este projeto realiza **detecção automática de placas de veículos** em vídeo
 
 1. **Clone o repositório:**
    ```sh
-    git clone https://github.com/seu-usuario/python-ocr-detection.git
-    cd python-ocr-detection
+    git clone https://github.com/seu-usuario/python-ocr-detection.git && cd python-ocr-detection
+   
    ```
 
 2. **Crie um ambiente virtual e ative-o:**
     ```
-        python3.11 -m venv .venv
-        source .venv/bin/activate
+    python3.11 -m venv .venv
+    source .venv/bin/activate
     ```
 
 1. **Instale as dependências:**
    ``` 
     pip install -r requirements.txt
-    
+
     **ou, se preferir, usando o pyproject.toml:**
 
     pip install . 
