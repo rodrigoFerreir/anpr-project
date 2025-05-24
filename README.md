@@ -37,6 +37,6 @@ Este projeto realiza **detecção automática de placas de veículos** em vídeo
 
 1. **Instale as dependências:**
    ``` pip install -r requirements.txt ```
-    # ou, se preferir, usando o pyproject.toml:
+    **ou, se preferir, usando o pyproject.toml:**
     ``` pip install . ```
 
