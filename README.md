@@ -21,13 +21,6 @@ Este projeto realiza **detecção automática de placas de veículos** em vídeo
 
 ---
 
-## Estrutura do Projeto
-
-python-ocr-detection/ │ ├── main.py # Script principal ├── pyproject.toml # Dependências e configuração ├── core/ │ ├── inference.py # Pipeline de inferência (YOLO + OCR) │ ├── video_stream_processor.py # Processamento e controle do stream │ ├── video_writer_handler.py # Escrita do vídeo anotado │ └── adapters/ │ ├── yolo_adapter.py # Wrapper para YOLOv8 │ └── easyocr_adapter.py # Wrapper para EasyOCR └── ...
-
-
----
-
 ## Instalação
 
 1. **Clone o repositório:**
