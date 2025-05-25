@@ -1,4 +1,5 @@
 from ultralytics import YOLO
+from ultralytics.utils import ThreadingLocked
 
 
 class YoloAdapter:
@@ -9,11 +10,12 @@ class YoloAdapter:
         # Get the class name from the model
         return self.model.names[class_id]
 
+    @ThreadingLocked()
     def predict(self, image):
         # Perform prediction using the YOLO model
-        results = self.model.predict(image)
-        return results
+        return self.model.predict(image)
 
+    @ThreadingLocked()
     def track(self, image):
         # Perform tracking using the YOLO model
         return self.model.track(image)

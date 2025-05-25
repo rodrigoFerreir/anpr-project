@@ -48,6 +48,18 @@ class VideoStreamProcessor:
             target=self._process_frames,
             name="ProcessThread",
         )
+        self.processor_thread_1 = threading.Thread(
+            target=self._process_frames,
+            name="ProcessThread-1",
+        )
+        self.processor_thread_2 = threading.Thread(
+            target=self._process_frames,
+            name="ProcessThread-2",
+        )
+        self.processor_thread_3 = threading.Thread(
+            target=self._process_frames,
+            name="ProcessThread-3",
+        )
 
     def _connect_stream(self) -> bool:
         """
@@ -171,7 +183,6 @@ class VideoStreamProcessor:
         while self.running or not self.frame_queue.empty():
             try:
                 frame = self.frame_queue.get()
-                time.sleep(0.1)
                 processed_frame = self.inference.inference(frame)
                 if self.save_result:
                     self.writer.write_frame(processed_frame)
@@ -202,6 +213,9 @@ class VideoStreamProcessor:
 
         self.capture_thread.start()
         self.processor_thread.start()
+        self.processor_thread_1.start()
+        self.processor_thread_2.start()
+        self.processor_thread_3.start()
 
     def stop(self) -> None:
         """
@@ -216,4 +230,7 @@ class VideoStreamProcessor:
 
         self.capture_thread.join()
         self.processor_thread.join()
+        self.processor_thread_1.join()
+        self.processor_thread_2.join()
+        self.processor_thread_3.join()
         logger.info("Processamento encerrado com sucesso.")
